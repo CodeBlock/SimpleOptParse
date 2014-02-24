@@ -21,4 +21,6 @@ argument = MkArgument "-n" "--name" "Your name"
 main : IO ()
 main = do
   args <- getArgs
-  putStrLn $ show argument
+  if "--help" `List.elem` args
+    then putStrLn $ show argument
+    else putStrLn "hi"
